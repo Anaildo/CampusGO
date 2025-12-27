@@ -4,5 +4,7 @@ export const theme = {
     white: '#FFFFFF',
     text: '#333333',
     gray: '#F2F2F2',
+     background: '#F9FAFB',
+  border: '#E5E7EB',
   },
 };
