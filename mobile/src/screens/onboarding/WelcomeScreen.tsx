@@ -1,17 +1,17 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { theme } from '../../styles/theme';
 
+export function WelcomeScreen({ navigation }: any) {
+  function handleStart() {
+    navigation.navigate('Login');
+  }
 
-export default function WelcomeScreen({ navigation }: any) {
   return (
     <View style={styles.container}>
-  <Image
-  source={require('../../assets/images/onibus.png')}
-  style={styles.image}
-  resizeMode="contain"
-/>
-
-
+      <Image
+        source={require('../../assets/images/onibus.png')}
+        style={styles.image}
+      />
 
       <Text style={styles.title}>Bem-vindo ao Campus GO!</Text>
 
@@ -19,10 +19,7 @@ export default function WelcomeScreen({ navigation }: any) {
         O app ideal para não perder o horário do seu ônibus
       </Text>
 
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('Welcome')}
-      >
+      <TouchableOpacity style={styles.button} onPress={handleStart}>
         <Text style={styles.buttonText}>Vamos lá</Text>
       </TouchableOpacity>
     </View>
@@ -38,10 +35,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   image: {
-    width: '58%',
-    maxWidth: 260,
-    height: undefined,
-    aspectRatio: 1,
+    width: 120,
+    height: 120,
     marginBottom: 32,
   },
   title: {
