@@ -7,7 +7,7 @@ type Onibus ={
     nome: string;
 };
 
-export function HomeScreen(){
+export function HomeScreen({ navigation }: any){
     const [onibus, setOnibus] = useState<Onibus[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -139,6 +139,14 @@ export function HomeScreen(){
                     }   
                 />
             )}
+
+            {/* Botão cadastrar novo ônibus */}
+            <TouchableOpacity 
+                style={styles.addBusButton}
+                onPress={() => navigation.navigate('AddBus')}
+            >
+                <Text style={styles.addBusButtonText}>Cadastrar novo ônibus</Text>
+            </TouchableOpacity>
 
         </View>
     );
@@ -294,6 +302,21 @@ const styles = StyleSheet.create({
     retryButtonText: {
         color: '#FFFFFF',
         fontWeight: 'bold',
+    },
+
+    addBusButton: {
+        backgroundColor: '#6B6B6B',
+        paddingVertical: 16,
+        borderRadius: 12,
+        alignItems: 'center',
+        marginTop: 20,
+        marginBottom: 20,
+    },
+
+    addBusButtonText: {
+        color: '#FFFFFF',
+        fontWeight: 'bold',
+        fontSize: 16,
     },
     
 });

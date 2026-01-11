@@ -6,6 +6,7 @@ import { WelcomeScreen } from '../screens/onboarding/WelcomeScreen';
 import { LoginScreen } from '../screens/onboarding/auth/login';
 import { RegisterScreen } from '../screens/onboarding/auth/register'; 
 import { HomeScreen } from '../screens/onboarding/HomeScreen';
+import { AddBusScreen } from '../screens/onboarding/AddBusScreen';
 
 export type RootStackParamList = {
   Splash: undefined;
@@ -13,6 +14,7 @@ export type RootStackParamList = {
   Login: undefined;
   Register: undefined;
   Home: undefined;
+  AddBus: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -29,6 +31,7 @@ export default function AppNavigator() {
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="AddBus" component={AddBusScreen} />
     </Stack.Navigator>
   );
 }
