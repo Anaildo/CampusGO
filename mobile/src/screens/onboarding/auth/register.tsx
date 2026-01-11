@@ -5,6 +5,10 @@ import { theme } from '../../../styles/theme';
 export function RegisterScreen({ navigation }: any) {
   const [profile, setProfile] = useState<'student' | 'driver'>('student');
 
+  function handleRegister() {
+    navigation.navigate('Home');
+  }
+
   return (
     <View style={styles.container}>
       {/* Logo */}
@@ -85,7 +89,7 @@ export function RegisterScreen({ navigation }: any) {
         secureTextEntry
       />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleRegister}>
         <Text style={styles.buttonText}>Criar conta</Text>
       </TouchableOpacity>
 

@@ -7,7 +7,7 @@ export function LoginScreen({ navigation }: any) {
   const [password, setPassword] = useState('');
 
   function handleLogin() {
-    navigation.navigate('Welcome');
+    navigation.navigate('Home');
   }
 
   return (
