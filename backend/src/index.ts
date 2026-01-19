@@ -7,6 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json({ message: "🚍 CampusGO API está funcionando!", endpoint: "/api/onibus" });
+});
+
 app.get("/api/onibus", (req, res) => {
   res.json(onibusMock);
 });
