@@ -14,13 +14,11 @@ export function AddBusScreen({ navigation }: any) {
   }
 
   function handleAdd() {
-    // TODO: Implementar lógica de adicionar ônibus
     navigation.goBack();
   }
 
   return (
     <View style={styles.container}>
-      {/* Header com seta de voltar */}
       <View style={styles.header}>
         <TouchableOpacity onPress={handleCancel} style={styles.backButton}>
           <Text style={styles.backArrow}>←</Text>
@@ -29,9 +27,7 @@ export function AddBusScreen({ navigation }: any) {
         <View style={styles.placeholder} />
       </View>
 
-      {/* Formulário */}
       <View style={styles.form}>
-        {/* Identificador do ônibus */}
         <View style={styles.fieldContainer}>
           <Text style={styles.label}>Identificador do ônibus</Text>
           <TextInput
@@ -43,7 +39,6 @@ export function AddBusScreen({ navigation }: any) {
           />
         </View>
 
-        {/* Placa do veículo */}
         <View style={styles.fieldContainer}>
           <Text style={styles.label}>Placa do veículo</Text>
           <TextInput
@@ -55,7 +50,6 @@ export function AddBusScreen({ navigation }: any) {
           />
         </View>
 
-        {/* Cor do veículo */}
         <View style={styles.fieldContainer}>
           <Text style={styles.label}>Cor do veículo</Text>
           <TextInput
@@ -67,7 +61,6 @@ export function AddBusScreen({ navigation }: any) {
           />
         </View>
 
-        {/* Capacidade */}
         <View style={styles.fieldContainer}>
           <Text style={styles.label}>Capacidade</Text>
           <TextInput
@@ -80,7 +73,6 @@ export function AddBusScreen({ navigation }: any) {
           />
         </View>
 
-        {/* Ar-condicionado */}
         <View style={styles.fieldContainer}>
           <View style={styles.switchContainer}>
             <Text style={styles.label}>Ar-condicionado</Text>
@@ -94,7 +86,6 @@ export function AddBusScreen({ navigation }: any) {
         </View>
       </View>
 
-      {/* Botões */}
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.cancelButton} onPress={handleCancel}>
           <Text style={styles.cancelButtonText}>Cancelar</Text>
