@@ -28,14 +28,12 @@ export function HomeScreen({ navigation }: any){
                 },
             });
 
-            // Verifica se a resposta é válida
             if (!response.ok) {
                 throw new Error(`Erro HTTP: ${response.status} - ${response.statusText}`);
             }
 
             const data = await response.json();
             
-            // Valida se os dados são um array
             if (Array.isArray(data)) {
                 setOnibus(data);
             } else {
@@ -46,7 +44,6 @@ export function HomeScreen({ navigation }: any){
             console.error('Erro ao carregar os ônibus:', errorMessage);
             setError(errorMessage);
             
-            // Mostra alerta para o usuário
             Alert.alert(
                 'Erro ao carregar dados',
                 `Não foi possível conectar ao servidor.\n\nVerifique se:\n• O backend está rodando\n• O IP está correto em src/config/api.ts\n• O celular está na mesma rede Wi-Fi\n\nErro: ${errorMessage}`,
@@ -60,12 +57,11 @@ export function HomeScreen({ navigation }: any){
     return(
         <View style={styles.container}>
 
-            {/*Header*/}
             <View style={styles.header}>
                 
                 <View style={styles.headerEsq}>
                     <Text style={styles.welcomeText}>Bem Vindo,</Text>
-                    <Text style={styles.userName}>Usuário</Text>
+                    <Text style={styles.welcomeText}>Usuário</Text>
                 </View>
                 
                 <Image 
@@ -76,7 +72,6 @@ export function HomeScreen({ navigation }: any){
 
             </View>
 
-            {/*Card Itinerário*/}
             <View style={styles.card}>
                 <Text style={styles.cardTitle}>Itinerário dos ônibus</Text>
 
@@ -91,7 +86,6 @@ export function HomeScreen({ navigation }: any){
                         <Text>21:50</Text>
                     </View>
 
-                    {/* Barra vertical */}
                     <View style={styles.verticalDivider} />
 
                     <View>
@@ -106,12 +100,10 @@ export function HomeScreen({ navigation }: any){
                 </View>
             </View>
 
-            {/* Botão iniciar rota*/}
             <TouchableOpacity style={styles.routeButton}>
                 <Text style={styles.routeButtonText}>Iniciar rota</Text>
             </TouchableOpacity>
 
-            {/*Lista de ônibus vinda do backend*/}
             {loading ? (
                 <View style={styles.loadingContainer}>
                     <ActivityIndicator size="large" color="#6B6B6B" />
@@ -140,7 +132,6 @@ export function HomeScreen({ navigation }: any){
                 />
             )}
 
-            {/* Botão cadastrar novo ônibus */}
             <TouchableOpacity 
                 style={styles.addBusButton}
                 onPress={() => navigation.navigate('AddBus')}
@@ -180,12 +171,6 @@ const styles = StyleSheet.create({
 
     welcomeText: {
         fontSize: 22,
-        color: '#000',
-    },
-
-    userName: {
-        fontSize: 22,
-        fontWeight: 'bold',
         color: '#000',
     },
 
