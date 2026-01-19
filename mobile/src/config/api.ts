@@ -1,4 +1,3 @@
-// Configuração da API
 const API_BASE_URL = 'https://campusgo-production.up.railway.app';
 
 export const API_CONFIG = {
